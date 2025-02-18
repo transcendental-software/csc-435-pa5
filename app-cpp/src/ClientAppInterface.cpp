@@ -28,6 +28,13 @@ void ClientAppInterface::readCommands() {
             // TO-DO parse command cand call connect on the processing engine
             continue;
         }
+
+        // if the command begins with get_info, print the client ID
+        if (command.size() >= 7 && command.substr(0, 8) == "get_info") {
+            // TO-DO parse command cand call getInfo on the processing engine
+            // TO-DO print the client ID
+            continue;
+        }
         
         // if the command begins with index, index the files from the specified directory
         if (command.size() >= 5 && command.substr(0, 5) == "index") {

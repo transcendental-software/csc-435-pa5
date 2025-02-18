@@ -4,6 +4,17 @@ FileRetrievalEngineImpl::FileRetrievalEngineImpl(std::shared_ptr<IndexStore> sto
     // TO-DO implement constructor
 }
 
+grpc::Status FileRetrievalEngineImpl::Register(
+        grpc::ServerContext* context,
+        const google::protobuf::Empty* r,
+        fre::RegisterRep* reply)
+{
+    // TO-DO generate a client ID
+    //       return the client ID as a RegisterRep reply
+
+    return grpc::Status::OK;
+}
+
 grpc::Status FileRetrievalEngineImpl::ComputeIndex(
         grpc::ServerContext* context,
         const fre::IndexReq* request,

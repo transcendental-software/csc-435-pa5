@@ -29,9 +29,10 @@ struct SearchResult {
 };
 
 class ClientProcessingEngine {
-    // TO-DO keep track of the connection
+    // keep track of the connection
     std::shared_ptr<grpc::Channel> channel;
     std::unique_ptr<fre::FileRetrievalEngine::Stub> stub;
+    // TO-DO keep track of the client ID
 
     public:
         // constructor
@@ -43,6 +44,8 @@ class ClientProcessingEngine {
         IndexResult indexFolder(std::string folderPath);
         
         SearchResult search(std::vector<std::string> terms);
+
+        long getInfo();
         
         void connect(std::string serverIP, std::string serverPort);
 };

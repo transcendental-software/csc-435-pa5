@@ -5,8 +5,13 @@ import "google/protobuf/empty.proto";
 package fre;
 
 service FileRetrievalEngine {
+    rpc Register(google.protobuf.Empty) returns (RegisterRep) {}
     rpc ComputeIndex(IndexReq) returns (IndexRep) {}
     rpc ComputeSearch(SearchReq) returns (SearchRep) {}
+}
+
+message RegisterRep {
+    int32 client_id = 1;
 }
 
 message IndexReq {
