@@ -50,8 +50,7 @@ public class ClientProcessingEngine {
 
         // TO-DO get the start time
         // TO-DO crawl the folder path and extrac all file paths
-        // TO-DO for each file extract all alphanumeric terms that are larger than 2 characters
-        //       and count their frequencies
+        // TO-DO for each file extract all terms/words and count their frequencies
         // TO-DO increment the total number of bytes read
         // TO-DO for each file perform a remote procedure call to the server by calling the gRPC client stub
         // TO-DO get the stop time and calculate the execution time
@@ -62,7 +61,7 @@ public class ClientProcessingEngine {
     
     public SearchResult searchFiles(ArrayList<String> terms) {
         SearchResult result = new SearchResult(0.0, new ArrayList<DocPathFreqPair>());
-
+        
         // TO-DO get the start time
         // TO-DO perform a remote procedure call to the server by calling the gRPC client stub
         // TO-DO get the stop time and calculate the execution time
@@ -71,8 +70,16 @@ public class ClientProcessingEngine {
         return result;
     }
 
+    public long getInfo() {
+        // TO-DO return the client ID
+
+        return 0;
+    }
+
     public void connect(String serverIP, String serverPort) {
         // TO-DO create communication channel with the gRPC Server
         // TO-DO create gRPC client stub
+        // TO-DO perform a remote procedure call to the server by calling the gRPC client stub
+        // TO-DO store the client ID
     }
 }

@@ -15,7 +15,10 @@ class FileRetrievalEngineImpl final : public fre::FileRetrievalEngine::Service
 
     public:
         explicit FileRetrievalEngineImpl(std::shared_ptr<IndexStore> store);
-        grpc::Status Register(grpc::ServerContext* context, const google::protobuf::Empty* r, fre::RegisterRep* reply);
+        grpc::Status Register(
+            grpc::ServerContext* context,
+            const google::protobuf::Empty* request,
+            fre::RegisterRep* reply);
         grpc::Status ComputeIndex(grpc::ServerContext* context, const fre::IndexReq* request, fre::IndexRep* reply);
         grpc::Status ComputeSearch(grpc::ServerContext* context, const fre::SearchReq* request, fre::SearchRep* reply);
 };

@@ -6,9 +6,8 @@ FileRetrievalEngineImpl::FileRetrievalEngineImpl(std::shared_ptr<IndexStore> sto
 
 grpc::Status FileRetrievalEngineImpl::Register(
         grpc::ServerContext* context,
-        const google::protobuf::Empty* r,
-        fre::RegisterRep* reply)
-{
+        const google::protobuf::Empty* request,
+        fre::RegisterRep* reply) {
     // TO-DO generate a client ID
     //       return the client ID as a RegisterRep reply
 
@@ -18,8 +17,7 @@ grpc::Status FileRetrievalEngineImpl::Register(
 grpc::Status FileRetrievalEngineImpl::ComputeIndex(
         grpc::ServerContext* context,
         const fre::IndexReq* request,
-        fre::IndexRep* reply)
-{
+        fre::IndexRep* reply) {
     // TO-DO extract the document path, client ID and word frequencies from the IndexReq request
     //       get the document number associated with the document path (call putDocument)
     //       update the index store with the word frequencies and the document number
@@ -31,8 +29,7 @@ grpc::Status FileRetrievalEngineImpl::ComputeIndex(
 grpc::Status FileRetrievalEngineImpl::ComputeSearch(
         grpc::ServerContext* context,
         const fre::SearchReq* request,
-        fre::SearchRep* reply)
-{
+        fre::SearchRep* reply) {
     // TO-DO extract the terms from the SearchReq request
     //       for each term get the pairs of documents and frequencies from the index store
     //       combine the returned documents and frequencies from all of the specified terms

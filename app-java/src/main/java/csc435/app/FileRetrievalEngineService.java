@@ -11,7 +11,7 @@ public class FileRetrievalEngineService extends FileRetrievalEngineGrpc.FileRetr
     }
 
     @Override
-    public void register(com.google.protobuf.Empty r, StreamObserver<RegisterRep> responseObserver) {
+    public void register(com.google.protobuf.Empty request, StreamObserver<RegisterRep> responseObserver) {
         responseObserver.onNext(doRegister());
         responseObserver.onCompleted();
     }
@@ -30,7 +30,7 @@ public class FileRetrievalEngineService extends FileRetrievalEngineGrpc.FileRetr
 
     private RegisterRep doRegister() {
         // TO-DO generate a client ID
-    //       return the client ID as a RegisterRep reply
+        //       return the client ID as a RegisterRep reply
 
         return RegisterRep.newBuilder().build();
     }

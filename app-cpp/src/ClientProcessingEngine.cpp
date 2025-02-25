@@ -36,7 +36,7 @@ long ClientProcessingEngine::getInfo() {
 void ClientProcessingEngine::connect(std::string serverIP, std::string serverPort) {
     // TO-DO create communication channel with the gRPC Server
     // TO-DO create gRPC client stub
-    // TO-DO perform a remote procedure call to the server by calling the gRPC client stub to get the client ID
+    // TO-DO perform a remote procedure call to the server by calling the gRPC client stub
     // TO-DO store the client ID
 }
 
