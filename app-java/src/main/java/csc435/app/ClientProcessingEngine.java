@@ -45,7 +45,7 @@ public class ClientProcessingEngine {
 
     public ClientProcessingEngine() { }
 
-    public IndexResult indexFiles(String folderPath) {
+    public IndexResult indexFolder(String folderPath) {
         IndexResult result = new IndexResult(0.0, 0);
 
         // TO-DO get the start time
@@ -59,7 +59,7 @@ public class ClientProcessingEngine {
         return result;
     }
     
-    public SearchResult searchFiles(ArrayList<String> terms) {
+    public SearchResult search(ArrayList<String> terms) {
         SearchResult result = new SearchResult(0.0, new ArrayList<DocPathFreqPair>());
         
         // TO-DO get the start time
